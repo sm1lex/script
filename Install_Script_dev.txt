@@ -23,6 +23,7 @@
     • #use https
     • git remote add origin https://github.com/sm1lex/learn_py.git
     • git remote -v
+    • git pull origin master 
     • #use ssh
     • git remote add origin git@github.com:sm1lex/learn_py.git
     • #switching remote URLs from SSH to HTTPS
