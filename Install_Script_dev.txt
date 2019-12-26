@@ -1,0 +1,55 @@
+﻿INSTALLATION AND PREPARE SYSTEM ON UBUNTU 18.04 FOR DEVELOPMENT
+    1. Install GIT from the source
+    •  sudo apt update
+    • #install dependencies
+    • sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+    • #maybe if need more dependencies for work with doc ascii in git (takes longer time to install)
+    • sudo apt-get install build-essential flex bison libreadline6-dev zlib1g-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev tcl tk tcl-dev gettext asciidoc docbook2x
+    • download source git archive in the /usr/src
+    • cd /usr/src
+    • sudo wget https://github.com/git/git/archive/v2.24.1.zip
+#version can be changed 
+    • sudo unzip v2.24.1.zip
+    • cd git-2.24.1/
+    • make prefix=/usr/local all doc info
+    • make prefix=/usr/local install
+    • git -–version
+    • git config --global user.name "sm1lex"
+    • git config --global user.email "smilovesmirnov@gmail.com"
+    • ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    • ls -al ~/.ssh
+    • cat ~/.ssh/*.pub 
+    • copy ssh key
+    • past ssh key in to https://github.com/settings/keys
+    • #use https
+    • git remote add origin https://github.com/sm1lex/learn_py.git
+    • git remote -v
+    • #use ssh
+    • git remote add origin git@github.com:sm1lex/learn_py.git
+    • #switching remote URLs from SSH to HTTPS
+    • git remote set-url origin https://github.com/sm1lex/learn_py.git
+    • git branch --set-upstream-to=origin/master master # for work command git pull /push
+
+    2. Install Python3 from the source 3.8.0 version for 10.12.2019
+    • cd /usr/src
+    • wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tar.xz
+    • tar -xvf Python-3.8.1.tar.xz
+    • cd Python-3.8.0
+    • ./configure –enable-optimizations #for 10-20% faster at executing python code by interpreter
+    • make
+    • sudo make install
+    • #нужно инсталлировать virt python, так как pip installed with python3.4 and >
+    • sudo pip3 install virtualenv
+    • sudo python3 -m venv myenv #(equal command) sudo virtualenv -p python3 myenv
+    • 
+    3. Install VIM from the source
+    • wget https://github.com/vim/vim.git
+    • #when you run this script at top, you must have installed git
+    • git clone https://github.com/vim/vim.git
+    • cd vim
+    • git pull
+    • cd src
+    • ./configure нужно добавить +pythoninterpretator
+    • make 
+    • 
+    • sudo make install
