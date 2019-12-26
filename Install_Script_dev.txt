@@ -1,5 +1,4 @@
-﻿INSTALLATION AND PREPARE SYSTEM ON UBUNTU 18.04 FOR DEVELOPMENT
-    1. Install GIT from the source
+﻿    1. Install GIT from the source
     •  sudo apt update
     • #install dependencies
     • sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
@@ -29,7 +28,7 @@
     • #switching remote URLs from SSH to HTTPS
     • git remote set-url origin https://github.com/sm1lex/learn_py.git
     • git branch --set-upstream-to=origin/master master # for work command git pull /push
-
+    • git pull --allow-unrelated-histories # if have a problem with unrelated mistake
     2. Install Python3 from the source 3.8.0 version for 10.12.2019
     • cd /usr/src
     • wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tar.xz
